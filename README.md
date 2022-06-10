@@ -1,10 +1,6 @@
 # deep learning-based all-in-one image analysis tool for cell quantification
 an automated deep learning-based all-in-one image processing pipeline for image sequences of the examined ECMO-membranes to quantify cell depositions in certain areas and identify predilection sites for increased cell adherence. 
 
-## publications
-* This study is a part of PHD. 
-* This study was presented at the GCB 2021, Germany. You can find the submitted abstract [here](https://github.com/zgormez/TH-BINGEN_ECMO_AI/blob/main/papers/GCB_2021_G%C3%B6rmez_Hoeren_Richter_Krause_Troidl.pdf).
-
 ## dataset
 you can find the 100 images which were used to test.  
 @Felix add hre some explanation for each part of the image name. What is their meaning?
@@ -20,3 +16,8 @@ You can find the FIJI macro [here](https://github.com/zgormez/TH-BINGEN_ECMO_AI/
 Especially in highly aggregated areas of the investigated samples, only a low dif-ferentiation of individual cell nuclei could be expected using the conventional semantic segmentation applied in FIJI. An AI-based method was developed to better resolve these areas, as it was expected to perform better than conventional segmentation [14]. Never-theless, a central problem in applying these methods is that they involve many sub-processes (pre-, main-, post-processing) that are difficult to modulate by scientists that are inexperienced in programming.
 To solve this gap, an automated, compact, deep learning-based ready-to-use image processing tool (ConfoQuant) was developed for the quantification process. It has a graphical user interface (GUI) and many different features to handle problems that oc-curred during the quantification process. 
 ![AI_tool workflow](https://github.com/zgormez/TH-BINGEN_ECMO_AI/blob/main/images/AI_tool_workflow.png)
+
+--------------------
+## publications
+* This study is a part of PHD. 
+* This study was presented at the GCB 2021, Germany. You can find the submitted abstract [here](https://github.com/zgormez/TH-BINGEN_ECMO_AI/blob/main/papers/GCB_2021_G%C3%B6rmez_Hoeren_Richter_Krause_Troidl.pdf).
