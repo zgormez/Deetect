@@ -1,4 +1,4 @@
-# deep learning-based all-in-one image analysis tool for cell quantification
+# Deetect: a deep learning based image analysis tool for quantification of adherent cell populations on oxygenator membranes after extracorporeal membrane oxygenation therapy
 an automated deep learning-based all-in-one image processing pipeline for image sequences of the examined ECMO-membranes to quantify cell depositions in certain areas and identify predilection sites for increased cell adherence. 
 
 ## dataset
@@ -20,4 +20,4 @@ To solve this gap, an automated, compact, deep learning-based ready-to-use image
 --------------------
 ## publications
 * This study is a part of PHD. 
-* This study was presented at the GCB 2021, Germany. You can find the submitted abstract [here](https://github.com/zgormez/TH-BINGEN_ECMO_AI/blob/main/papers/GCB_2021_G%C3%B6rmez_Hoeren_Richter_Krause_Troidl.pdf).
+* This study was presented at the GCB 2021, Germany. You can find the submitted abstract [here](https://github.com/zgormez/Deetect/blob/main/papers/GCB_2021_G%C3%B6rmez_Hoeren_Richter_Krause_Troidl.pdf).
