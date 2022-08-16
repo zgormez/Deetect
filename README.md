@@ -1,7 +1,7 @@
 # Deetect: a deep learning based image analysis tool for quantification of adherent cell populations on oxygenator membranes after extracorporeal membrane oxygenation therapy
 an automated deep learning-based all-in-one image processing pipeline for image sequences of the examined ECMO-membranes to quantify cell depositions in certain areas and identify predilection sites for increased cell adherence. 
 
-## dataset
+## Experimental dataset
 The experiment was done in four sets, 115 images are generated. The number of images produced in each set is as follows: 
 - Set 1 contains 30 images; 15 from Fiber, 15 from Warp predilection site;   10 from venous (I), 10  from middle (M) and 10 from Arterial (A) part of the oxygenator 
 - Set 2 contains 25 images; 10 from Fiber, 15 from Warp predilection site;   10 from venous (I), 6  from middle (M) and 9 from Arterial (A) part of the oxygenator
@@ -18,7 +18,7 @@ You can find the FIJI macro [here](https://github.com/zgormez/TH-BINGEN_ECMO_AI/
 ### Deetect:  deep learning based image analysis tool
 Especially in highly aggregated areas of the investigated samples, only a low dif-ferentiation of individual cell nuclei could be expected using the conventional semantic segmentation applied in FIJI. An AI-based method was developed to better resolve these areas, as it was expected to perform better than conventional segmentation [14]. Never-theless, a central problem in applying these methods is that they involve many sub-processes (pre-, main-, post-processing) that are difficult to modulate by scientists that are inexperienced in programming.
 To solve this gap, an automated, compact, deep learning-based ready-to-use image processing tool (ConfoQuant) was developed for the quantification process. It has a graphical user interface (GUI) and many different features to handle problems that oc-curred during the quantification process. 
-![AI_tool workflow](https://github.com/zgormez/TH-BINGEN_ECMO_AI/blob/main/images/AI_tool_workflow.png)
+![Deetect workflow](https://github.com/zgormez/Deetect/blob/main/images/Deetect_workflow_12.08.png)
 
 --------------------
 ## publications
