@@ -23,5 +23,5 @@ To solve this gap, an automated, compact, deep learning-based ready-to-use image
 
 --------------------
 ## publications
-* This study is a part of PHD. 
+* This study contains parts of a PHD-project. 
 * This study was presented at the GCB 2021, Germany. You can find the submitted abstract [here](https://github.com/zgormez/Deetect/blob/main/papers/GCB_2021_G%C3%B6rmez_Hoeren_Richter_Krause_Troidl.pdf).
