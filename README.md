@@ -3,10 +3,10 @@ an automated deep learning-based all-in-one image processing pipeline for image 
 
 ## Experimental dataset
 The experiment was done in four sets, 115 images are generated. The number of images produced in each set is as follows: 
-- Set 1 contains 30 images; 15 from Fiber, 15 from Warp predilection site;   10 from venous (I), 10  from middle (M) and 10 from Arterial (A) part of the oxygenator 
-- Set 2 contains 25 images; 10 from Fiber, 15 from Warp predilection site;   10 from venous (I), 6  from middle (M) and 9 from Arterial (A) part of the oxygenator
-- Set 3 contains 30 images; 15 from Fiber, 15 from Warp predilection site;   10 from venous (I), 10  from middle (M) and 10 from Arterial (A) part of the oxygenator
-- Set 4 contains 30 images; 15 from Fiber, 15 from Warp predilection site;   10 from venous (I), 10  from middle (M) and 10 from Arterial (A) part of the oxygenator
+- Set 1 contains 30 imagesequences; 15 from Fiber, 15 from Warp predilection site;   10 from venous (I), 10  from middle (M) and 10 from Arterial (A) part of the oxygenator 
+- Set 2 contains 25 imagesequences; 10 from Fiber, 15 from Warp predilection site;   10 from venous (I), 6  from middle (M) and 9 from Arterial (A) part of the oxygenator
+- Set 3 contains 30 imagesequences; 15 from Fiber, 15 from Warp predilection site;   10 from venous (I), 10  from middle (M) and 10 from Arterial (A) part of the oxygenator
+- Set 4 contains 30 imagesequences; 15 from Fiber, 15 from Warp predilection site;   10 from venous (I), 10  from middle (M) and 10 from Arterial (A) part of the oxygenator
 This dataset is available at: https://edmond.mpdl.mpg.de/dataset.xhtml?persistentId=doi:10.17617/3.2OEMSK  
 ## Tools
 ### Conventional Segmentation and Counting via FIJI 
