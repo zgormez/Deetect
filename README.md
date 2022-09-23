@@ -1,4 +1,3 @@
-![Makro workflow](https://user-images.githubusercontent.com/107420190/191924802-47488aed-6f91-4c3b-842c-792f5bb6f9ee.png)
 # Deetect: a deep learning based image analysis tool for quantification of adherent cell populations on oxygenator membranes after extracorporeal membrane oxygenation therapy
 an automated deep learning-based all-in-one image processing pipeline for image sequences of the examined ECMO-membranes to quantify cell depositions in certain areas and identify predilection sites for increased cell adherence. 
 
