@@ -30,7 +30,7 @@ You can find the FIJI macro [here](https://github.com/zgormez/TH-BINGEN_ECMO_AI/
 
 Especially in highly aggregated areas of the investigated samples, only a low dif-ferentiation of individual cell nuclei could be expected using the conventional semantic segmentation applied in FIJI. An AI-based method was developed to better resolve these areas, as it was expected to perform better than conventional segmentation [14]. Never-theless, a central problem in applying these methods is that they involve many sub-processes (pre-, main-, post-processing) that are difficult to modulate by scientists that are inexperienced in programming.
 To solve this gap, an automated, compact, deep learning-based ready-to-use image processing tool (ConfoQuant) was developed for the quantification process. It has a graphical user interface (GUI) and many different features to handle problems that oc-curred during the quantification process. 
-![Deetect workflow](https://github.com/zgormez/Deetect/blob/main/images/Deetect_workflow.pdf)
+![Deetect workflow](https://github.com/zgormez/Deetect/blob/main/images/Deetect_workflow_09.22.png)
 
 --------------------
 ## publications
