@@ -15,14 +15,14 @@ In this approach a macro was programmed in FIJI to automatically quantify the ce
 The minimum size of the objects to be counted was set to 20 pixels2. The roundness (cir-cularity) of the objects to be detected was set to was set to 0 - 1 due to the different shapes of the cell nuclei. After execution of the function, the result is displayed as an overview drawing with a representation of the object outlines and a result table. 
 You can find the FIJI macro [here](https://github.com/zgormez/TH-BINGEN_ECMO_AI/blob/main/DAPI%20Counting.ijm)
 ![Makro workflow](https://user-images.githubusercontent.com/107420190/191925245-eebd4790-2f81-4d38-ad59-e1392bf858a4.png)
-
- </details>
+</details>
 
 ### Deetect:  deep learning based image analysis tool
+<details><summary><b>Show Details</b></summary>
 Especially in highly aggregated areas of the investigated samples, only a low dif-ferentiation of individual cell nuclei could be expected using the conventional semantic segmentation applied in FIJI. An AI-based method was developed to better resolve these areas, as it was expected to perform better than conventional segmentation [14]. Never-theless, a central problem in applying these methods is that they involve many sub-processes (pre-, main-, post-processing) that are difficult to modulate by scientists that are inexperienced in programming.
 To solve this gap, an automated, compact, deep learning-based ready-to-use image processing tool (ConfoQuant) was developed for the quantification process. It has a graphical user interface (GUI) and many different features to handle problems that oc-curred during the quantification process. 
 ![Deetect workflow](https://github.com/zgormez/Deetect/blob/main/images/Deetect_workflow_12.08.png)
-
+</details>
 --------------------
 ## publications
 * The study is based on findings and data from a doctoral thesis by Felix Hoeren.
