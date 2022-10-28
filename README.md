@@ -2,12 +2,14 @@
 an automated deep learning-based all-in-one image processing pipeline for image sequences of the examined ECMO-membranes to quantify cell depositions in certain areas and identify predilection sites for increased cell adherence. 
 
 ## Experimental dataset
+This dataset is available at: https://edmond.mpdl.mpg.de/dataset.xhtml?persistentId=doi:10.17617/3.2OEMSK  
 The experiment was done in four sets, 115 images are generated. The number of images produced in each set is as follows: 
 - Set 1 contains 30 imagesequences; 15 from Fiber, 15 from Warp predilection site;   10 from venous (I), 10  from middle (M) and 10 from Arterial (A) part of the oxygenator 
 - Set 2 contains 25 imagesequences; 10 from Fiber, 15 from Warp predilection site;   10 from venous (I), 6  from middle (M) and 9 from Arterial (A) part of the oxygenator
 - Set 3 contains 30 imagesequences; 15 from Fiber, 15 from Warp predilection site;   10 from venous (I), 10  from middle (M) and 10 from Arterial (A) part of the oxygenator
 - Set 4 contains 30 imagesequences; 15 from Fiber, 15 from Warp predilection site;   10 from venous (I), 10  from middle (M) and 10 from Arterial (A) part of the oxygenator
-This dataset is available at: https://edmond.mpdl.mpg.de/dataset.xhtml?persistentId=doi:10.17617/3.2OEMSK  
+
+
 ## Tools
 ### Conventional Segmentation and Counting via FIJI 
 In this approach a macro was programmed in FIJI to automatically quantify the cell count. It was written in Image-J macro script language. In the first two steps, the images were automatically thresholded using the Li-white method [13]. It was used to set a threshold for the intensity and remove background noise and artifacts from the image to emphasise the cell nucleus structures. Since areas of increased nucleus density lose their differentiability using a threshold the watershed tool was used in the next step. In this morphological process a topographic map of the image is virtually flooded and wherev-er two watersheds meet, the method assumes two contiguous cell cores and draws a di-viding line between the touching objects. The final step of the macro was the counting of the cell nuclei via the analyze-particles function. It scans the image until it detects the edge of an object. It outlines the object boundaries and measures the area. The steps are repeated until the entire image is scanned. 
