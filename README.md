@@ -24,7 +24,7 @@ The experiment was done in four sets, 115 images are generated. The number of im
 ### Conventional Segmentation and Counting via FIJI 
 In this approach a macro was programmed in FIJI to automatically quantify the cell count. It was written in Image-J macro script language. In the first two steps, the images were automatically thresholded using the Li-white method [13]. It was used to set a threshold for the intensity and remove background noise and artifacts from the image to emphasise the cell nucleus structures. Since areas of increased nucleus density lose their differentiability using a threshold the watershed tool was used in the next step. In this morphological process a topographic map of the image is virtually flooded and wherev-er two watersheds meet, the method assumes two contiguous cell cores and draws a di-viding line between the touching objects. The final step of the macro was the counting of the cell nuclei via the analyze-particles function. It scans the image until it detects the edge of an object. It outlines the object boundaries and measures the area. The steps are repeated until the entire image is scanned. 
 The minimum size of the objects to be counted was set to 20 pixels2. The roundness (cir-cularity) of the objects to be detected was set to was set to 0 - 1 due to the different shapes of the cell nuclei. After execution of the function, the result is displayed as an overview drawing with a representation of the object outlines and a result table. 
-You can find the FIJI macro [here](https://github.com/zgormez/TH-BINGEN_ECMO_AI/blob/main/DAPI%20Counting.ijm)
+You can find the FIJI macro [here](https://github.com/zgormez/Deetect/blob/main/DAPI%20Counting.ijm)
 ![Makro workflow](https://user-images.githubusercontent.com/107420190/191925245-eebd4790-2f81-4d38-ad59-e1392bf858a4.png)
 
 
@@ -35,6 +35,12 @@ To solve this gap, an automated, compact, deep learning-based ready-to-use image
 ![Deetect workflow](https://github.com/zgormez/Deetect/blob/main/images/Deetect_workflow_09.22.png)
 
 ## Installation
+### Instructions
+1. Install an [Anaconda](https://www.anaconda.com/download/) distribution of Python -- Choose **Python 3.8** and your operating system.
+2. Download Deetect ![Deetect file](https://github.com/zgormez/Deetect/Deetect)
+3. Open an anaconda prompt and create a new environment with `conda env create --file deetect_env.yml`.
+4. Activate the environment, run `conda activate deetect`
+5. Go to Deetect directory and run 'python main_window.py' 
 --------------------
 ## publications
 * The study is based on findings and data from a doctoral thesis by Felix Hoeren.
