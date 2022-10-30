@@ -1,0 +1,38 @@
+
+----------------------------------------------------------------------------------------
+2022-10-30 11:29:10
+#### Descriptive statistics for all image sequences
+
+       Nuclei Detection                         Double Counting Analysis                         Elimination Processes                        
+                   size        mean         std                     size        mean         std                  size        mean         std
+Group                                                                                                                                         
+Fibers               55  457.418182  214.894004                       55  372.418182  182.771026                    55  331.236364  155.605146
+Warps                60  847.633333  363.494665                       60  653.750000  301.885747                    60  577.933333  242.988238
+
+Double Counting Analysis_Fibers vs. Double Counting Analysis_Warps
+Mann-Whitney-Wilcoxon test two-sided, P_val:3.895e-08 U_stat=6.680e+02, Different distribution (reject H0)
+
+Nuclei Detection_Fibers vs. Nuclei Detection_Warps
+Mann-Whitney-Wilcoxon test two-sided, P_val:1.117e-09 U_stat=5.615e+02, Different distribution (reject H0)
+
+Elimination Processes_Fibers vs. Elimination Processes_Warps
+Mann-Whitney-Wilcoxon test two-sided, P_val:8.475e-09 U_stat=6.210e+02, Different distribution (reject H0)
+
+----------------------------------------------------------------------------------------
+2022-10-30 11:29:14
+#### Descriptive statistics for all image sequences
+
+       Nuclei Detection                         Double Counting Analysis                         Elimination Processes                        
+                   size        mean         std                     size        mean         std                  size        mean         std
+Group                                                                                                                                         
+Fibers               55  457.418182  214.894004                       55  372.418182  182.771026                    55  331.236364  155.605146
+Warps                60  847.633333  363.494665                       60  653.750000  301.885747                    60  577.933333  242.988238
+
+Double Counting Analysis_Fibers vs. Double Counting Analysis_Warps
+Mann-Whitney-Wilcoxon test two-sided, P_val:3.895e-08 U_stat=6.680e+02, Different distribution (reject H0)
+
+Nuclei Detection_Fibers vs. Nuclei Detection_Warps
+Mann-Whitney-Wilcoxon test two-sided, P_val:1.117e-09 U_stat=5.615e+02, Different distribution (reject H0)
+
+Elimination Processes_Fibers vs. Elimination Processes_Warps
+Mann-Whitney-Wilcoxon test two-sided, P_val:8.475e-09 U_stat=6.210e+02, Different distribution (reject H0)
