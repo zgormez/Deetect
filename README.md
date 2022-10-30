@@ -8,6 +8,7 @@ an automated deep learning-based all-in-one image processing pipeline for image 
   * [Conventional Segmentation and Counting via FIJI](#conventional-segmentation-and-counting-via-fiji)
   * [Deetect:  deep learning based image analysis tool](#deetect---deep-learning-based-image-analysis-tool)
 - [Installation](#installation)
+  * [Instructions](#instructions)
 - [publications](#publications)
  
  
@@ -37,7 +38,7 @@ To solve this gap, an automated, compact, deep learning-based ready-to-use image
 ## Installation
 ### Instructions
 1. Install an [Anaconda](https://www.anaconda.com/download/) distribution of Python -- Choose **Python 3.8** and your operating system.
-2. Download Deetect ![Deetect file](https://github.com/zgormez/Deetect/Deetect)
+2. Download Deetect [Deetect file](https://github.com/zgormez/Deetect/Deetect)
 3. Open an anaconda prompt and create a new environment with `conda env create --file deetect_env.yml`.
 4. Activate the environment, run `conda activate deetect`
 5. Go to Deetect directory and run 'python main_window.py' 
