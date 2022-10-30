@@ -3,13 +3,17 @@
 an automated deep learning-based all-in-one image processing pipeline for image sequences of the examined ECMO-membranes to quantify cell depositions in certain areas and identify predilection sites for increased cell adherence. 
 
 ## Table of Content
-- [Experimental dataset](#experimental-dataset)
-- [Tools](#tools)
-  * [Conventional Segmentation and Counting via FIJI](#conventional-segmentation-and-counting-via-fiji)
-  * [Deetect:  deep learning based image analysis tool](#deetect---deep-learning-based-image-analysis-tool)
-- [Installation](#installation)
-  * [Instructions](#instructions)
-- [publications](#publications)
+
+  * [Experimental dataset](#experimental-dataset)
+  * [Tools](#tools)
+    + [Conventional Segmentation and Counting via FIJI](#conventional-segmentation-and-counting-via-fiji)
+    + [Deetect:  deep learning based image analysis tool](#deetect---deep-learning-based-image-analysis-tool)
+  * [How to get started:](#how-to-get-started-)
+  * [Usage](#usage)
+    + [Main Window](#main-window)
+    + [Stats Window](#stats-window)
+  * [![Deetect_stats_window](/images/deetect_stats_window.png)](#--deetect-stats-window---images-deetect-stats-windowpng-)
+  * [publications](#publications)
  
  
 ## Experimental dataset
@@ -35,8 +39,8 @@ Especially in highly aggregated areas of the investigated samples, only a low di
 To solve this gap, an automated, compact, deep learning-based ready-to-use image processing tool (Deetect) was developed for the quantification process. It has a graphical user interface (GUI) and many different features to handle problems that occurred during the quantification process. 
 ![Deetect workflow](/images/Deetect_workflow_09.22.png)
 
-## Installation
-### Instructions
+## How to get started:
+
 1. Install an [Anaconda](https://www.anaconda.com/download/) distribution of Python -- Choose **Python 3.8** and your operating system.
 2. Download Deetect [Deetect file](Deetect)
 3. Open an anaconda prompt and create a new environment with `conda env create --file deetect_env.yml`.
