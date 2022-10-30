@@ -12,7 +12,6 @@ an automated deep learning-based all-in-one image processing pipeline for image 
   * [Usage](#usage)
     + [Main Window](#main-window)
     + [Stats Window](#stats-window)
-  * [![Deetect_stats_window](/images/deetect_stats_window.png)](#--deetect-stats-window---images-deetect-stats-windowpng-)
   * [publications](#publications)
  
  
@@ -54,6 +53,8 @@ In the statistics window, by using the analysis file created by Deetect the sele
 ![Deetect_main_window](/images/deetect_main_window.png)
 ### Stats Window
 ![Deetect_stats_window](/images/deetect_stats_window.png)
+## Minimal Output
+a minimal dataset with input and outputs is available at: [sample_2img_with_outputs.zip](https://edmond.mpdl.mpg.de/dataset.xhtml?persistentId=doi:10.17617/3.2OEMSK  )
 --------------------
 ## publications
 * The study is based on findings and data from a doctoral thesis by Felix Hoeren.
