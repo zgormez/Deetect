@@ -47,14 +47,20 @@ To solve this gap, an automated, compact, deep learning-based ready-to-use image
 5. Go to Deetect directory and run 'python main_window.py' 
 
 ## Usage
+
 Deetect  has a graphical user interface (GUI) consisting of two windows. In the main window, the user selects the images to be analyzed and the methods to be applied. 
 In the statistics window, by using the analysis file created by Deetect the selected test is applied and data is visualized in the selected graph type.
+
 ### Main Window
 ![Deetect_main_window](/images/deetect_main_window.png)
+
 ### Stats Window
 ![Deetect_stats_window](/images/deetect_stats_window.png)
-## Minimal Output
+
+### Minimal Dataset including input and outputs
+
 a minimal dataset with input and outputs is available at: [sample_2img_with_outputs.zip](https://edmond.mpdl.mpg.de/dataset.xhtml?persistentId=doi:10.17617/3.2OEMSK  )
+
 --------------------
 ## publications
 * The study is based on findings and data from a doctoral thesis by Felix Hoeren.
