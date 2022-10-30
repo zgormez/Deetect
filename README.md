@@ -1,4 +1,5 @@
-# Deetect: a deep learning based image analysis tool for quantification of adherent cell populations on oxygenator membranes after extracorporeal membrane oxygenation therapy
+# Deetect: 
+## a deep learning based image analysis tool for quantification of adherent cell populations on oxygenator membranes after extracorporeal membrane oxygenation therapy
 an automated deep learning-based all-in-one image processing pipeline for image sequences of the examined ECMO-membranes to quantify cell depositions in certain areas and identify predilection sites for increased cell adherence. 
 
 ## Table of Content
@@ -6,6 +7,7 @@ an automated deep learning-based all-in-one image processing pipeline for image 
 - [Tools](#tools)
   * [Conventional Segmentation and Counting via FIJI](#conventional-segmentation-and-counting-via-fiji)
   * [Deetect:  deep learning based image analysis tool](#deetect---deep-learning-based-image-analysis-tool)
+- [Installation](#installation)
 - [publications](#publications)
  
  
@@ -32,6 +34,7 @@ Especially in highly aggregated areas of the investigated samples, only a low di
 To solve this gap, an automated, compact, deep learning-based ready-to-use image processing tool (ConfoQuant) was developed for the quantification process. It has a graphical user interface (GUI) and many different features to handle problems that oc-curred during the quantification process. 
 ![Deetect workflow](https://github.com/zgormez/Deetect/blob/main/images/Deetect_workflow_09.22.png)
 
+## Installation
 --------------------
 ## publications
 * The study is based on findings and data from a doctoral thesis by Felix Hoeren.
