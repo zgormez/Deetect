@@ -1,9 +1,7 @@
 import numpy as np
-
 from matplotlib import pyplot as plt
 import seaborn as sns
 from statannotations.Annotator import Annotator
-
 import utils
 
 

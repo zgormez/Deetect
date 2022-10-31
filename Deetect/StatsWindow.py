@@ -1,22 +1,13 @@
 import os
-
 import sys
-
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, uic, QtGui, QtCore
 from PyQt5.QtWidgets import QMainWindow, QMessageBox
-
-from PyQt5 import uic, QtGui, QtCore
-
 import analysis.stats as st
 import pandas as pd
 import numpy as np
 
 
 class StatsWindow(QMainWindow):
-    """
-    This "window" is a QMainWindow. If it has no parent, it
-    will appear as a free-floating window as we want.
-    """
     analysis_file = ''
     df = None
 
@@ -28,7 +19,6 @@ class StatsWindow(QMainWindow):
 
         self.group_byname_rb.toggled.connect(lambda: self.grouping_checked(1))
         self.group_byselect_rb.toggled.connect(lambda: self.grouping_checked(0))
-        # self.pushButton_selection.clicked.connect(self.move_selected_to_group2)
         self.pushButton_apply_grouping.clicked.connect(self.apply_grouping_pattern)
         self.pushButton_apply_grouping_folder.clicked.connect(self.apply_grouping_folder)
         self.pushButton_apply_stats.clicked.connect(self.apply_stats)
@@ -64,13 +54,6 @@ class StatsWindow(QMainWindow):
 
     def grouping_checked(self, i):
         self.stackedWidget.setCurrentIndex(i)
-
-    def move_selected_to_group2(self):
-        # sort rows in descending order in order to compensate shifting due to takeItem
-        rows = sorted([index.row() for index in self.listWidget.selectedIndexes()], reverse=True)
-        for row in rows:
-            self.listWidget_2.addItem(self.listWidget.takeItem(row))
-        self.listWidget_2.sortItems()
 
     def run(self):
         # read images and load them into list
@@ -161,7 +144,7 @@ if __name__ == '__main__':
 
     app = QtWidgets.QApplication(sys.argv)
     w = StatsWindow()
-    w.analysis_file = r"sample_data\stats_in_paper\number_of_cell_ALL_sets_folder_parent.txt"
+    w.analysis_file = r"stats_in_paper\number_of_cell_ALL_sets_folder_parent.txt"
     w.run()
 
     try:

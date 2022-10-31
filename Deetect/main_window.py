@@ -1,15 +1,10 @@
 import os
-
 import sys
 from os import listdir
 from pathlib import Path
-
 import torch
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, uic
 from PyQt5.QtWidgets import QMainWindow, QFileDialog, QApplication, QMessageBox
-
-from PyQt5 import uic
-
 import utils
 import simulator
 from StatsWindow import StatsWindow

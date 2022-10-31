@@ -1,13 +1,11 @@
 import gc
 import os
 import time
-
 import cv2
 import numpy as np
 import torch
 from cellpose import models, io, plot
 from cellpose import utils as cp_utils
-
 import utils
 
 

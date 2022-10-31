@@ -1,9 +1,8 @@
 from datetime import datetime
 import os
 from enum import Enum
-from os import listdir
 import numpy as np
-from cellpose import utils, plot, io
+from cellpose import utils, io
 import cv2
 import rasterio.features
 from shapely.geometry import Polygon
@@ -18,19 +17,6 @@ def check_and_mkdir(path):
         os.makedirs(path)
 
 
-def getImages(img_path, makeStack, dir_path):
-    if (makeStack):
-        ret, imgs = cv2.imreadmulti(img_path)
-        stacked_imgs, files = stack5by5(imgs, img_path)
-    else:
-        stacked_imgs = []
-        filename = os.path.splitext(img_path)[0]
-        files = [f for f in listdir(dir_path) if (f.lower().startswith(filename) and f.lower().endswith('_img.png'))]
-        for file in files:
-            stacked_imgs.append(io.imread(file))
-    return stacked_imgs, files
-
-
 def createBGR(imgB):
     if len(imgB.shape) == 2:
         h, w = imgB.shape
@@ -39,25 +25,6 @@ def createBGR(imgB):
         return imgBGR
     else:
         return imgB
-
-
-def getTifImages(img_path, makeStack, dir_path, stack_size):
-    if (makeStack):
-        imgs = io.imread(img_path)
-        list_imgBGR = []
-        for i in list(imgs):
-            list_imgBGR.append(createBGR(i))
-        if stack_size == 2:
-            stacked_imgs, files = stack2by2(list_imgBGR, img_path)
-        else:
-            stacked_imgs, files = stack5by5(list_imgBGR, img_path)
-    else:
-        stacked_imgs = []
-        filename = os.path.splitext(img_path)[0]
-        files = [f for f in listdir(dir_path) if (f.lower().startswith(filename) and f.lower().endswith('_img.png'))]
-        for file in files:
-            stacked_imgs.append(io.imread(file))
-    return stacked_imgs, files
 
 
 def read_tif_apply_stacking(img_path, stack_size, output_dir, rotation):
@@ -73,7 +40,9 @@ def read_tif_apply_stacking(img_path, stack_size, output_dir, rotation):
         rotate_images(stacked_imgs, rotation)
         # rotate_warpAffine_images(stacked_imgs, 270)
 
-    rolling_ball(stacked_imgs)
+    # pre-process
+
+    # rolling_ball(stacked_imgs)
     # apply_clahe(stacked_imgs)
     # blur_images(stacked_imgs, 3)
     list_imgBGR = []
@@ -122,7 +91,7 @@ def stack_all_scans(imgs, img_path):
 def apply_clahe(img_list):
     for i, img in enumerate(img_list):
         clahe = cv2.createCLAHE(clipLimit=1.5, tileGridSize=(8, 8))
-        # TODO after that apply roolong ball to remove background
+        # TODO after that apply rolling ball to remove background
         img_list[i] = clahe.apply(img)
 
 
