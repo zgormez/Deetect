@@ -1,4 +1,4 @@
-# Deetect: 
+# Deetect:
 ## a deep learning based image analysis tool for quantification of adherent cell populations on oxygenator membranes after extracorporeal membrane oxygenation therapy
 an automated deep learning-based all-in-one image processing pipeline for image sequences of the examined ECMO-membranes to quantify cell depositions in certain areas and identify predilection sites for increased cell adherence. 
 
@@ -7,8 +7,8 @@ an automated deep learning-based all-in-one image processing pipeline for image 
   * [Experimental dataset](#experimental-dataset)
   * [Tools](#tools)
     + [Conventional Segmentation and Counting via FIJI](#conventional-segmentation-and-counting-via-fiji)
-    + [Deetect:  deep learning based image analysis tool](#deetect---deep-learning-based-image-analysis-tool)
-  * [How to get started:](#how-to-get-started-)
+    + [Deetect: deep learning based image analysis tool](#deetect:deep-learning-based-image-analysis-tool)
+  * [How to get started:](#how-to-get-started)
   * [Usage](#usage)
     + [Main Window](#main-window)
     + [Stats Window](#stats-window)
@@ -32,13 +32,13 @@ You can find the FIJI macro [here](DAPI%20Counting.ijm)
 ![Makro workflow](https://user-images.githubusercontent.com/107420190/191925245-eebd4790-2f81-4d38-ad59-e1392bf858a4.png)
 
 
-### Deetect:  deep learning based image analysis tool
+### Deetect: deep learning based image analysis tool
 
-Especially in highly aggregated areas of the investigated samples, only a low dif-ferentiation of individual cell nuclei could be expected using the conventional semantic segmentation applied in FIJI. An AI-based method was developed to better resolve these areas, as it was expected to perform better than conventional segmentation [14]. Never-theless, a central problem in applying these methods is that they involve many sub-processes (pre-, main-, post-processing) that are difficult to modulate by scientists that are inexperienced in programming.
+Especially in highly aggregated areas of the investigated samples, only a low differentiation of individual cell nuclei could be expected using the conventional semantic segmentation applied in FIJI. An AI-based method was developed to better resolve these areas, as it was expected to perform better than conventional segmentation [14]. Never-theless, a central problem in applying these methods is that they involve many sub-processes (pre-, main-, post-processing) that are difficult to modulate by scientists that are inexperienced in programming.
 To solve this gap, an automated, compact, deep learning-based ready-to-use image processing tool (Deetect) was developed for the quantification process. It has a graphical user interface (GUI) and many different features to handle problems that occurred during the quantification process. 
 ![Deetect workflow](/images/Deetect_workflow_09.22.png)
 
-## How to get started:
+## How to get started
 
 1. Install an [Anaconda](https://www.anaconda.com/download/) distribution of Python -- Choose **Python 3.8** and your operating system.
 2. Download Deetect [Deetect file](Deetect)
