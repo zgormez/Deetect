@@ -1,16 +1,11 @@
-import os
 import time
 from os.path import basename
-
 import numpy as np
-
 from PyQt5.QtWidgets import QApplication, QMessageBox
-
 import utils
 from analysis import nuclei_detection as pnd
 from analysis import elimination_splitting as pes
 from analysis import double_counting as pdc
-import analysis.stats as st
 import pandas as pd
 from pathlib import Path
 
@@ -19,7 +14,6 @@ def run_file_by_file_for_all_analysis(params, progress_bar, info_lbl):
     # sys.stdout = open(self.outputFile + self.condition + '_console_out.txt', 'w')
     tic_total = time.time()
     print('\n', utils.get_formatted_datetime(), '&&SIM-INFO: Analysis STARTED for all selected images')
-    # fout_cell = open(outputFile + 'number_of_cell.txt', "w")
     df_stats = create_df(params)
     diameters = []
     try:
@@ -130,15 +124,3 @@ def add_stats_df(df, masks_numbers, files, parent_img_path):
         a_list = [folder, parent_name, filename]
         a_list.extend(counts)
         df.loc[len(df.index)] = a_list
-        # fout_cell.write(filename + "\t" + "\t".join(str(item) for item in counts) + "\n")
-
-
-def run_stats(params, progress_bar, info_lbl):
-    try:
-        # TODO add also descriptive statisticc like this
-        #  https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs10278-019-00200-8/MediaObjects/10278_2019_200_Fig2_HTML.png?as=webp
-        # TODO no more group info in the analysis file. Ask the user how to grouping
-        info_lbl.setText("TIME: " + utils.get_formatted_datetime() + "\nPROCESS: Statistics")
-        st.apply_stats(params.outputFile + 'number_of_cell.txt')
-    except ValueError as e:
-        print(utils.get_formatted_datetime(), e)
