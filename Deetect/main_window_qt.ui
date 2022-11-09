@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>712</width>
-    <height>890</height>
+    <height>1089</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -64,7 +64,7 @@ border-color: rgb(228, 166, 33);</string>
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>../gui_qt5/images/open_folder.ico</normaloff>../gui_qt5/images/open_folder.ico</iconset>
+              <normaloff>images/open_folder.ico</normaloff>images/open_folder.ico</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -86,7 +86,7 @@ border-color: rgb(1, 215, 222);</string>
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>../gui_qt5/images/open_tif.ico</normaloff>../gui_qt5/images/open_tif.ico</iconset>
+              <normaloff>images/open_tif.ico</normaloff>images/open_tif.ico</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -118,7 +118,7 @@ border-color: rgb(1, 215, 222);</string>
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>../cellpose_pipeline/images/open_folder.ico</normaloff>../cellpose_pipeline/images/open_folder.ico</iconset>
+              <normaloff>images/open_folder.ico</normaloff>images/open_folder.ico</iconset>
             </property>
            </widget>
           </item>
@@ -637,7 +637,7 @@ border-color: rgb(143, 240, 0);</string>
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../gui_qt5/images/run.ico</normaloff>../gui_qt5/images/run.ico</iconset>
+        <normaloff>images/run.ico</normaloff>images/run.ico</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -675,7 +675,7 @@ border-color: rgb(143, 240, 0);</string>
      <x>0</x>
      <y>0</y>
      <width>712</width>
-     <height>26</height>
+     <height>36</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuRun_Stats">
