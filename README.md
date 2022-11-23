@@ -8,6 +8,7 @@ an automated deep learning-based all-in-one image processing pipeline for image 
   * [Tools](#tools)
     + [Conventional Segmentation and Counting via FIJI](#conventional-segmentation-and-counting-via-fiji)
     + [Deetect: deep learning based image analysis tool](#deetect-deep-learning-based-image-analysis-tool)
+  * Deetect Development(#deetect-development)
   * [How to get started](#how-to-get-started)
   * [Usage](#usage)
     + [Main Window](#main-window)
@@ -44,7 +45,7 @@ To solve this gap, an automated, compact, deep learning-based ready-to-use image
 
 ## Deetect Development
 
-Deetect was written in Python version 3.8. It is developed with open-source packages available for Python. The required packages are specified in the [♥'deetect_env.yml'](Deetect/deetect_env.yml) file. In the ['How to get started'](#how-to-get-started) section of this readme, it is explained how to install them with the package manager conda. 
+Deetect was written in Python version 3.8. It is developed with open-source packages available for Python. The required packages are specified in the ['deetect_env.yml'](Deetect/deetect_env.yml) file. In the ['How to get started'](#how-to-get-started) section of this readme, it is explained how to install them with the package manager conda. 
 The required computation time is essentially defined by the segmentation step performed via Cellpose and varies greatly with the cell size and population shown. Thus the time depends on Cellpose performance and the capacity of the used computer which has  GPU or CPU.  
 2-z-substack analysis of 100 images took about 200 minutes (2 minutes per image) on a laptop equipped with an NVIDIA Quadro T2000
 
