@@ -8,7 +8,7 @@ an automated deep learning-based all-in-one image processing pipeline for image 
   * [Tools](#tools)
     + [Conventional Segmentation and Counting via FIJI](#conventional-segmentation-and-counting-via-fiji)
     + [Deetect: deep learning based image analysis tool](#deetect-deep-learning-based-image-analysis-tool)
-  * Deetect Development(#deetect-development)
+  * [Deetect Development](#deetect-development)
   * [How to get started](#how-to-get-started)
   * [Usage](#usage)
     + [Main Window](#main-window)
