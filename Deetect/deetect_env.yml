@@ -28,9 +28,11 @@ dependencies:
   - curl=7.86.0=heaf79c2_0
   - cycler=0.11.0=pyhd8ed1ab_0
   - dav1d=1.0.0=h8ffe710_1
+  - eigen=3.4.0=h2d74725_0
   - expat=2.5.0=h1537add_0
   - fastremap=1.13.3=py38h137dd97_1
   - ffmpeg=5.1.2=gpl_h6a9407d_103
+  - fftw=3.3.10=nompi_h38027f0_105
   - font-ttf-dejavu-sans-mono=2.37=hab24e00_0
   - font-ttf-inconsolata=3.000=h77eed37_0
   - font-ttf-source-code-pro=2.038=h77eed37_0
@@ -81,6 +83,8 @@ dependencies:
   - libgdal=3.5.0=ha3bfaf0_2
   - libglib=2.74.1=h79619a9_0
   - libiconv=1.17=h8ffe710_0
+  - libitk=5.2.1=hac70a04_1
+  - libitk-devel=5.2.1=h3bb2308_1
   - libkml=1.3.0=hf2ab4e4_1015
   - liblapack=3.9.0=12_win64_mkl
   - liblapacke=3.9.0=12_win64_mkl
@@ -122,7 +126,7 @@ dependencies:
   - opencv=4.6.0=py38haa244fe_6
   - openh264=2.3.1=h63175ca_1
   - openjpeg=2.5.0=hc9384bd_1
-  - openssl=1.1.1q=hcfcfb64_1
+  - openssl=1.1.1s=hcfcfb64_0
   - packaging=21.3=pyhd8ed1ab_0
   - pandas=1.5.1=py38h5846ac1_1
   - patsy=0.5.3=pyhd8ed1ab_0
@@ -151,6 +155,7 @@ dependencies:
   - seaborn-base=0.11.2=pyhd8ed1ab_0
   - setuptools=65.5.0=pyhd8ed1ab_0
   - shapely=1.8.0=py38h1e1a050_7
+  - simpleitk=2.1.1=py38h4afd916_0
   - six=1.16.0=pyh6c4a22f_0
   - snappy=1.1.9=h82413e6_1
   - snuggs=1.4.7=py_0
@@ -158,6 +163,7 @@ dependencies:
   - statsmodels=0.13.2=py38hbdcd294_0
   - svt-av1=1.3.0=h63175ca_0
   - tbb=2021.6.0=h91493d7_1
+  - tbb-devel=2021.6.0=h91493d7_1
   - tifffile=2022.10.10=pyhd8ed1ab_0
   - tiledb=2.9.5=h5689973_0
   - tk=8.6.12=h8ffe710_0
