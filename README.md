@@ -8,10 +8,15 @@ an automated deep learning-based all-in-one image processing pipeline for image 
   * [Tools](#tools)
     + [Conventional Segmentation and Counting via FIJI](#conventional-segmentation-and-counting-via-fiji)
     + [Deetect: deep learning based image analysis tool](#deetect-deep-learning-based-image-analysis-tool)
+  * [Deetect Development](#deetect-development)
   * [How to get started](#how-to-get-started)
   * [Usage](#usage)
     + [Main Window](#main-window)
     + [Stats Window](#stats-window)
+  * [Input-Outputs](#input--outputs)
+    + [Minimal Dataset including input and outputs](#minimal-dataset-including-input-and-outputs)
+    + [Input](#input)
+    + [Outputs](#outputs)
   * [publications](#publications)
  
  
@@ -38,6 +43,14 @@ Especially in highly aggregated areas of the investigated samples, only a low di
 To solve this gap, an automated, compact, deep learning-based ready-to-use image processing tool (Deetect) was developed for the quantification process. It has a graphical user interface (GUI) and many different features to handle problems that occurred during the quantification process. 
 ![Deetect workflow](/images/Deetect_workflow_09.22.png)
 
+## Deetect Development
+
+Deetect was written in Python version 3.8. It is developed with open-source packages available for Python. The required packages are specified in the ['deetect_env.yml'](Deetect/deetect_env.yml) file. In the ['How to get started'](#how-to-get-started) section of this readme, it is explained how to install them with the package manager conda. 
+
+The required computation time is essentially defined by the segmentation step performed via Cellpose and varies greatly with the cell size and population shown. Thus the time depends on Cellpose performance and the capacity of the used computer which has  GPU or CPU.  
+
+2-z-substack analysis of 100 images took about 200 minutes (2 minutes per image) on a laptop equipped with an NVIDIA Quadro T2000
+
 ## How to get started
 
 1. Install an [Anaconda](https://www.anaconda.com/download/) distribution of Python -- Choose **Python 3.8** and your operating system.
@@ -57,10 +70,33 @@ In the statistics window, by using the analysis file created by Deetect the sele
 ### Stats Window
 ![Deetect_stats_window](/images/deetect_stats_window.png)
 
+## Input - Outputs
+
 ### Minimal Dataset including input and outputs
 
 a minimal dataset with input and outputs is available at: [sample_2img_with_outputs.zip](https://edmond.mpdl.mpg.de/dataset.xhtml?persistentId=doi:10.17617/3.2OEMSK  )
 
+### Input
+* Deetect accepts files with tiff and tiff extensions.
+* Allows multiple file selection
+* If the folder is selected, all subfolders are scanned and all files with the appropriate extension are added to the queue for processing.
+
+### Outputs
+All the ouptuts are saved under a folder. This folder name contains the value of the following parameters: flow threshold, mask threshold, model, stack size and rotation
+Under root result folder there are sub folders contains related analysis, therefore user can track result of each analysis steps easly.
+* cp_orj_out : contains cellpose original outputs
+* cp_png_out : contains cellpose resulting images (flows, overlay_mask, outlines) as .png
+* double_out : contains dublication analysis results 
+  + text files for 1) number of cells before and after double counting and 2) detailed information about intersection
+  + images show 1) intersection and 2) removed cells
+* e&s_out : contains Elimination and splitting analysis results 
+  + text files for 1) number of cells  and 2) detailed information of cells for elimination process
+  + image shows outlined cells after this process 
+* png_stck* : contains the resulting images after stacking as .png
+
+Also under the root folder, there is one text file contains the number of cells detected after each analysis. This file is used in stats window for statistics and visualization
+  
+  
 --------------------
 ## publications
 * The study is based on findings and data from a doctoral thesis by Felix Hoeren.
