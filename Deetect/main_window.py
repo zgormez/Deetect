@@ -7,6 +7,8 @@ from PyQt5 import QtWidgets, uic
 from PyQt5.QtWidgets import QMainWindow, QFileDialog, QApplication, QMessageBox
 import utils
 import simulator
+from Deetect.Projection import Projection
+
 from StatsWindow import StatsWindow
 
 
@@ -22,6 +24,7 @@ class Parameters:
 
         # preprocessing
         self.rotation = None
+        self.projection_type = Projection.MAX
 
         # cellpose
         self.cp_model = 'cyto'
@@ -101,7 +104,7 @@ class main_window(QMainWindow):
             self.gui_enable_on_off()
 
     def set_parameters(self):
-        # stacking
+        # stack size
         if self.stack2by2.isChecked():
             self.param.stack_size = 2
         elif self.stack5by5.isChecked():
@@ -110,6 +113,20 @@ class main_window(QMainWindow):
             self.param.stack_size = 1
         elif self.stackallscans_rb.isChecked():
             self.param.stack_size = 0
+
+        # intensity projection type
+        if self.rb_proj_max.isChecked():
+            self.param.projection_type = Projection.MAX
+        elif self.rb_proj_min.isChecked():
+            self.param.projection_type = Projection.MIN
+        elif self.rb_proj_mean.isChecked():
+            self.param.projection_type = Projection.MEAN
+        elif self.rb_proj_median.isChecked():
+            self.param.projection_type = Projection.MEDIAN
+        elif self.rb_proj_std.isChecked():
+            self.param.projection_type = Projection.STD
+        elif self.rb_proj_sum.isChecked():
+            self.param.projection_type = Projection.SUM
 
         # cellpose
         self.param.channels = [0, 3]  # TODO put option in gui and get
@@ -139,7 +156,8 @@ class main_window(QMainWindow):
 
         # output file and condition
         chn_text = "".join(str(p) for p in self.param.channels)
-        self.param.condition = f"chan{chn_text}_flwThr{self.param.flow_thresh}_cllThr{self.param.mask_thresh}" \
+
+        self.param.condition = f"project{self.param.projection_type.name}_chan{chn_text}_flwThr{self.param.flow_thresh}_cllThr{self.param.mask_thresh}" \
                                f"_stck{self.param.stack_size}_model{self.param.cp_model}_rot{self.param.rotation}"
         self.param.outputFile = f"results_{self.param.condition}/"
         os.chdir(self.param.outputDir)
@@ -192,7 +210,7 @@ class main_window(QMainWindow):
                 files = [dir_path + '/' + f for f in sorted(listdir(dir_path)) if
                          (f.lower().endswith('.tif') or f.lower().endswith('.tiff')) is True]
         if len(files) > 0:
-            # TODO add new files into existing list: what about for the images have ths same name
+            # TODO add new files into existing list: what about for the images have the same name
             self.param.filelist = files
             savedir = Path(files[0]).parent.absolute()  # go up a level to save in its own folder
             self.output_lineEdit.setText(savedir.as_posix())
@@ -230,4 +248,3 @@ if __name__ == '__main__':
         app.exec_()
     except Exception as e:
         print(str(e))
-

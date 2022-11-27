@@ -7,6 +7,8 @@ import cv2
 import rasterio.features
 from shapely.geometry import Polygon
 import imutils
+from Deetect.Projection import Projection
+import SimpleITK as sitk
 
 text_size = 0.28
 text_font = cv2.FONT_HERSHEY_SIMPLEX
@@ -27,14 +29,14 @@ def createBGR(imgB):
         return imgB
 
 
-def read_tif_apply_stacking(img_path, stack_size, output_dir, rotation):
+def read_tif_apply_stacking(img_path, stack_size, output_dir, rotation, projection_type=Projection.MAX):
     imgs = io.imread(img_path)
     if stack_size == 1:
         stacked_imgs, files = no_stacking(imgs, os.path.basename(img_path))
     elif stack_size == 2 or stack_size == 5:
-        stacked_imgs, files = apply_stacking(imgs, os.path.basename(img_path), stack_size)
+        stacked_imgs, files = apply_stacking(imgs, os.path.basename(img_path), stack_size, projection_type)
     else:
-        stacked_imgs, files = stack_all_scans(imgs, os.path.basename(img_path))
+        stacked_imgs, files = stack_all_scans(imgs, os.path.basename(img_path), projection_type)
     # degree 0: cv2.ROTATE_90_CLOCKWISE, 1: cv2.ROTATE_180, 2: 270, cv2.ROTATE_90_COUNTERCLOCKWISE
     if rotation is not None:
         rotate_images(stacked_imgs, rotation)
@@ -64,28 +66,63 @@ def no_stacking(imgs, img_path):
     return img_list, file_list
 
 
-def apply_stacking(imgs, img_path, stack_size):
+def apply_stacking(imgs, img_path, stack_size, projection_type):
     number_of_slices = len(imgs)
+    # number_of_slices = 2
     img_list = []
     file_list = []
     if number_of_slices % stack_size == 0:
         img_base_path = os.path.splitext(img_path)[0]
-        for x in range(0, len(imgs), stack_size):
+        for x in range(0, number_of_slices, stack_size):
+            # for x in range(0, len(imgs), stack_size):
             filename = img_base_path + '_s' + str(x + 1) + "-" + str(x + stack_size) + '.png'
             file_list.append(filename)
-            img_s1 = np.maximum.reduce(imgs[x:x + stack_size])
-            img_list.append(img_s1)
+            # img_s1 = np.maximum.reduce(imgs[x:x + stack_size])
+            img_project = apply_projection(imgs[x:x + stack_size], projection_type)
+            img_list.append(img_project)
     else:
         raise ValueError(f'{number_of_slices} slices cannot be grouped in {stack_size}')
     return img_list, file_list
 
 
-def stack_all_scans(imgs, img_path):
+def stack_all_scans(imgs, img_path, projection_type):
     img_list = []
     file_list = []
     file_list.append(os.path.splitext(img_path)[0] + '_all' + '.png')
-    img_list.append(np.maximum.reduce(imgs))
+    img_list.append(apply_projection(imgs, projection_type))
     return img_list, file_list
+
+
+def apply_projection(imgs, type):
+    axe = 2  # projection along axe z.
+    img_sitk = sitk.GetImageFromArray(imgs)  # Get a SimpleITK Image from a numpy array.
+    if type == Projection.MAX:
+        # projection_np = np.maximum.reduce(imgs)
+        projection = sitk.GetArrayFromImage(sitk.MaximumProjection(img_sitk, axe))[0]
+    elif type == Projection.MIN:
+        # projection_np = np.minimum.reduce(imgs)
+        projection = sitk.GetArrayFromImage(sitk.MinimumProjection(img_sitk, axe))[0]
+    elif type == Projection.MEAN:
+        # projection_np = np.mean(imgs,axis=0)
+        projection_64 = sitk.GetArrayFromImage(sitk.MeanProjection(img_sitk, axe))[0]
+        projection = normalize_uint8(projection_64)
+    elif type == Projection.MEDIAN:
+        #projection_np = np.median(imgs,axis=0)
+        projection_64 = sitk.GetArrayFromImage(sitk.MedianProjection(img_sitk, axe))[0]
+        projection = normalize_uint8(projection_64)
+    elif type == Projection.STD:
+        # projection_np = np.std(imgs,axis=0)
+        projection_64 = sitk.GetArrayFromImage(sitk.StandardDeviationProjection(img_sitk, axe))[0]
+        projection = normalize_uint8(projection_64)
+    elif type == Projection.SUM:
+        # projection_np = np.sum(imgs,axis=0)
+        projection_64 = sitk.GetArrayFromImage(sitk.SumProjection(img_sitk, axe))[0]
+        projection = normalize_uint8(projection_64)
+    return projection
+
+
+def normalize_uint8(img):
+    return cv2.normalize(img, None, 0, 255, cv2.NORM_MINMAX, cv2.CV_8U)
 
 
 def apply_clahe(img_list):
@@ -98,7 +135,7 @@ def apply_clahe(img_list):
 def rolling_ball(img_list):
     from skimage import restoration
     for i, img in enumerate(img_list):
-        background = restoration.rolling_ball(img, kernel=restoration.ellipsoid_kernel(( 21, 21), 0.1))
+        background = restoration.rolling_ball(img, kernel=restoration.ellipsoid_kernel((21, 21), 0.1))
         img_list[i] = img - background
 
 
@@ -305,5 +342,3 @@ def perform_usm(ch_raw):
         c_usm = cv2.addWeighted(c, 2.0, c_gauss, -1.0, 0)
         ch_sharp.append(c_usm)
     return ch_sharp
-
-

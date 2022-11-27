@@ -30,7 +30,7 @@ def run_file_by_file_for_all_analysis(params, progress_bar, info_lbl):
             print(utils.get_formatted_datetime(), '##SIM-INFO: Analysis STARTED for file:', parent_img_name)
             try:
                 stacked_imgs, files = utils.read_tif_apply_stacking(parent_img_name, params.stack_size,
-                                                                    params.outputFile, params.rotation)
+                                                                    params.outputFile, params.rotation, params.projection_type)
 
                 masks_numbers_cp = []
                 diameter = []
